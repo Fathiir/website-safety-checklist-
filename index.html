@@ -494,7 +494,7 @@
         <div class="logo-sub">Checklist Sekolah</div>
       </div>
     </div>
-    <div class="header-badge">2026 Edition</div>
+    <div class="header-badge">2024 Edition</div>
   </div>
 </header>
 
@@ -618,11 +618,398 @@
 
     <!-- 3. Cyberbullying -->
     <div class="category" style="animation-delay:0.15s">
-      <div class="category-header">(
+      <div class="category-header">
         <div class="cat-icon" style="background:#fde8f0">🤝</div>
         <div class="category-title">Anti Cyberbullying</div>
         <div class="category-count" id="count-s3"></div>
       </div>
       <div class="checklist" id="cat-s3">
         <div class="check-item" onclick="toggle(this,'siswa')">
-          <div class="checkbox"><svg width
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Tidak mengirim pesan mengancam, merendahkan, atau menghina orang lain</div>
+            <div class="check-desc">Kata-kata di online dapat menyakiti hati seseorang seperti di dunia nyata</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Melaporkan dan memblokir akun yang melakukan perundungan</div>
+            <div class="check-desc">Gunakan fitur "Laporkan" di platform media sosial</div>
+          </div>
+          <span class="check-tag tag-penting">Penting</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Bercerita kepada guru atau orang tua jika mengalami cyberbullying</div>
+            <div class="check-desc">Jangan pendam sendiri — minta bantuan adalah tindakan yang berani</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Perangkat -->
+    <div class="category" style="animation-delay:0.20s">
+      <div class="category-header">
+        <div class="cat-icon" style="background:#e8f5e9">💻</div>
+        <div class="category-title">Keamanan Perangkat</div>
+        <div class="category-count" id="count-s4"></div>
+      </div>
+      <div class="checklist" id="cat-s4">
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Tidak mengunduh aplikasi dari sumber tidak resmi (APK tidak dikenal)</div>
+            <div class="check-desc">Unduh hanya dari Play Store, App Store, atau sumber terpercaya</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Selalu update sistem operasi dan aplikasi secara rutin</div>
+            <div class="check-desc">Update menutup celah keamanan yang bisa dimanfaatkan hacker</div>
+          </div>
+          <span class="check-tag tag-baik">Baik</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Tidak sembarangan klik link atau attachment dari pesan tidak dikenal</div>
+            <div class="check-desc">Phishing sering menyamar sebagai pesan dari teman atau sekolah</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Pasang kunci layar (PIN/sidik jari) di semua perangkat</div>
+            <div class="check-desc">Mencegah orang lain mengakses datamu jika perangkat tertinggal</div>
+          </div>
+          <span class="check-tag tag-penting">Penting</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /panel-siswa -->
+
+
+  <!-- ═══════════ GURU PANEL ═══════════ -->
+  <div class="panel" id="panel-guru">
+
+    <div class="completion-card" id="done-guru">
+      <div class="big-icon">🏆</div>
+      <h3>Selamat, Guru Digital yang Tangguh!</h3>
+      <p>Anda telah memenuhi semua standar keamanan digital. Jadilah teladan bagi para siswa!</p>
+    </div>
+
+    <div class="progress-label">
+      <span>Progress Keamananmu</span>
+      <span id="pct-guru">0 / 0 selesai</span>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="bar-guru" style="width:0%"></div>
+    </div>
+
+    <button class="reset-btn" onclick="resetPanel('guru')">↺ Reset Checklist</button>
+
+    <!-- 1. Akun & Infrastruktur -->
+    <div class="category" style="animation-delay:0.05s">
+      <div class="category-header">
+        <div class="cat-icon" style="background:#e8f4fd">🔐</div>
+        <div class="category-title">Keamanan Akun & Infrastruktur</div>
+        <div class="category-count" id="count-g1"></div>
+      </div>
+      <div class="checklist" id="cat-g1">
+        <div class="check-item" onclick="toggle(this,'guru')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Gunakan akun email resmi sekolah untuk semua komunikasi profesional</div>
+            <div class="check-desc">Pisahkan akun pribadi dan akun pekerjaan dengan ketat</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'guru')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Aktifkan 2FA pada semua akun platform pembelajaran (Google Workspace, LMS, dll)</div>
+            <div class="check-desc">Lapisan keamanan ekstra mencegah akses tidak sah ke data siswa</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'guru')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Lakukan backup data nilai dan materi secara rutin (mingguan)</div>
+            <div class="check-desc">Gunakan Google Drive sekolah atau storage terenkripsi yang disetujui</div>
+          </div>
+          <span class="check-tag tag-penting">Penting</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'guru')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Verifikasi identitas sebelum berbagi informasi siswa kepada pihak luar</div>
+            <div class="check-desc">Termasuk orang tua — pastikan melalui kanal resmi sekolah</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Platform Pembelajaran -->
+    <div class="category" style="animation-delay:0.10s">
+      <div class="category-header">
+        <div class="cat-icon" style="background:#fef3e8">📚</div>
+        <div class="category-title">Platform Pembelajaran Online</div>
+        <div class="category-count" id="count-g2"></div>
+      </div>
+      <div class="checklist" id="cat-g2">
+        <div class="check-item" onclick="toggle(this,'guru')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Atur ruang kelas virtual dengan waiting room dan password join</div>
+            <div class="check-desc">Mencegah "Zoombombing" atau gangguan dari pihak tidak diundang</div>
+          </div>
+          <span class="check-tag tag-penting">Penting</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'guru')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Hanya bagikan link sesi kelas kepada siswa terdaftar melalui platform resmi</div>
+            <div class="check-desc">Tidak menyebar link di media sosial publik</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'guru')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Periksa kebijakan privasi platform sebelum meminta siswa mendaftar</div>
+            <div class="check-desc">Pastikan platform mematuhi regulasi perlindungan data anak</div>
+          </div>
+          <span class="check-tag tag-penting">Penting</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'guru')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Pantau aktivitas siswa di platform dan tindak lanjuti perilaku tidak pantas</div>
+            <div class="check-desc">Termasuk konten tidak sesuai, kata-kata kasar, atau pelecehan antar siswa</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Literasi Digital Siswa -->
+    <div class="category" style="animation-delay:0.15s">
+      <div class="category-header">
+        <div class="cat-icon" style="background:#fde8f0">🎓</div>
+        <div class="category-title">Edukasi Literasi Digital Siswa</div>
+        <div class="category-count" id="count-g3"></div>
+      </div>
+      <div class="checklist" id="cat-g3">
+        <div class="check-item" onclick="toggle(this,'guru')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Sisipkan materi keamanan digital dalam pembelajaran minimal sekali per semester</div>
+            <div class="check-desc">Ajak diskusi tentang hoaks, phishing, dan etika digital</div>
+          </div>
+          <span class="check-tag tag-baik">Baik</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'guru')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Ajarkan cara memverifikasi informasi sebelum menyebarkan (cek fakta)</div>
+            <div class="check-desc">Gunakan tools seperti Turnbackhoax.id atau CekFakta.com</div>
+          </div>
+          <span class="check-tag tag-penting">Penting</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'guru')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Sosialisasikan kebijakan penggunaan teknologi sekolah kepada siswa dan orang tua</div>
+            <div class="check-desc">Pastikan semua pihak memahami aturan dan konsekuensinya</div>
+          </div>
+          <span class="check-tag tag-baik">Baik</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Perangkat Sekolah -->
+    <div class="category" style="animation-delay:0.20s">
+      <div class="category-header">
+        <div class="cat-icon" style="background:#e8f5e9">🖥️</div>
+        <div class="category-title">Pengelolaan Perangkat Sekolah</div>
+        <div class="category-count" id="count-g4"></div>
+      </div>
+      <div class="checklist" id="cat-g4">
+        <div class="check-item" onclick="toggle(this,'guru')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Pastikan komputer lab terpasang antivirus yang selalu diperbarui</div>
+            <div class="check-desc">Koordinasikan dengan teknisi IT sekolah secara berkala</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'guru')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Aktifkan filter konten pada jaringan Wi-Fi sekolah</div>
+            <div class="check-desc">Blokir situs dewasa, judi, dan konten berbahaya lainnya</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'guru')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Laporkan insiden keamanan siber kepada kepala sekolah dan IT dalam 24 jam</div>
+            <div class="check-desc">Dokumentasikan kejadian: waktu, jenis insiden, perangkat yang terlibat</div>
+          </div>
+          <span class="check-tag tag-penting">Penting</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /panel-guru -->
+
+
+  <!-- ═══════════ TIPS PANEL ═══════════ -->
+  <div class="panel" id="panel-tips">
+    <div style="margin-bottom:28px;">
+      <h2 style="font-family:'DM Serif Display',serif; font-size:1.5rem; margin-bottom:8px; color:var(--text)">Tips & Panduan Keamanan Digital</h2>
+      <p style="color:var(--muted); font-size:0.88rem; line-height:1.6">Panduan praktis untuk menggunakan internet secara aman dan bertanggung jawab di lingkungan sekolah.</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card" style="animation-delay:0.05s">
+        <div class="tip-icon">🔎</div>
+        <h4>Kenali Hoaks & Disinformasi</h4>
+        <p>Sebelum berbagi berita, periksa minimal 3 sumber terpercaya. Gunakan situs cek fakta resmi seperti Turnbackhoax.id atau CekFakta.com.</p>
+      </div>
+      <div class="tip-card" style="animation-delay:0.08s">
+        <div class="tip-icon">🎣</div>
+        <h4>Waspadai Phishing</h4>
+        <p>Jangan klik tautan mencurigakan dari email atau pesan tidak dikenal. Selalu periksa URL sebelum memasukkan data login kamu.</p>
+      </div>
+      <div class="tip-card" style="animation-delay:0.11s">
+        <div class="tip-icon">📸</div>
+        <h4>Jejak Digital Itu Permanen</h4>
+        <p>Setiap foto, komentar, dan postingan meninggalkan jejak. Pikirkan dampaknya terhadap masa depanmu sebelum mengunggah konten apapun.</p>
+      </div>
+      <div class="tip-card" style="animation-delay:0.14s">
+        <div class="tip-icon">🛡️</div>
+        <h4>Lindungi Data Pribadi</h4>
+        <p>NIK, nomor KK, alamat rumah, dan data sensitif lainnya tidak boleh dibagikan kepada siapapun secara online tanpa keperluan jelas dan terverifikasi.</p>
+      </div>
+      <div class="tip-card" style="animation-delay:0.17s">
+        <div class="tip-icon">⚖️</div>
+        <h4>Hak Cipta & Plagiarisme</h4>
+        <p>Selalu cantumkan sumber saat menggunakan karya orang lain. Plagiarisme digital juga merupakan pelanggaran etika dan hukum.</p>
+      </div>
+      <div class="tip-card" style="animation-delay:0.20s">
+        <div class="tip-icon">🌐</div>
+        <h4>Gunakan Wi-Fi Publik dengan Aman</h4>
+        <p>Hindari login ke akun penting saat menggunakan Wi-Fi publik. Jika perlu, gunakan VPN yang terpercaya untuk melindungi koneksimu.</p>
+      </div>
+      <div class="tip-card" style="animation-delay:0.23s">
+        <div class="tip-icon">⏰</div>
+        <h4>Screen Time yang Sehat</h4>
+        <p>Batasi penggunaan gadget untuk hiburan maksimal 2 jam per hari. Istirahatkan mata setiap 20 menit dengan melihat objek jauh selama 20 detik.</p>
+      </div>
+      <div class="tip-card" style="animation-delay:0.26s">
+        <div class="tip-icon">🆘</div>
+        <h4>Minta Bantuan Jika Merasa Tidak Aman</h4>
+        <p>Jika mengalami ancaman, pemerasan, atau konten berbahaya di internet, segera lapor ke guru, orang tua, atau hubungi Kominfo di 159.</p>
+      </div>
+    </div>
+  </div><!-- /panel-tips -->
+
+</main>
+
+<!-- Diagonal page watermark -->
+<div class="page-watermark" aria-hidden="true">
+  <span>TECHTRING</span>
+</div>
+
+<!-- Fixed badge watermark -->
+<div class="watermark-badge" aria-hidden="true">
+  <div class="wm-dot">⚡</div>
+  <div class="wm-text">
+    <div class="wm-made">Made by</div>
+    <div class="wm-brand">TECHTRING</div>
+  </div>
+</div>
+
+<footer>
+  Dibuat untuk lingkungan sekolah Indonesia &mdash; <strong>Digital Safety Checklist</strong> &mdash; Selalu update, selalu aman.
+</footer>
+
+<script>
+  // State
+  const state = { siswa: {}, guru: {} };
+
+  function toggle(el, panel) {
+    el.classList.toggle('checked');
+    updateProgress(panel);
+  }
+
+  function updateProgress(panel) {
+    const p = document.getElementById('panel-' + panel);
+    const all = p.querySelectorAll('.check-item');
+    const done = p.querySelectorAll('.check-item.checked');
+    const pct = all.length ? (done.length / all.length * 100) : 0;
+
+    document.getElementById('bar-' + panel).style.width = pct + '%';
+    document.getElementById('pct-' + panel).textContent = done.length + ' / ' + all.length + ' selesai';
+
+    const card = document.getElementById('done-' + panel);
+    if (done.length === all.length && all.length > 0) {
+      card.classList.add('show');
+    } else {
+      card.classList.remove('show');
+    }
+
+    // update category counts
+    updateCounts(panel);
+  }
+
+  function updateCounts(panel) {
+    const p = document.getElementById('panel-' + panel);
+    const prefix = panel === 'siswa' ? 's' : 'g';
+    [1,2,3,4].forEach(i => {
+      const cat = document.getElementById('cat-' + prefix + i);
+      if (!cat) return;
+      const total = cat.querySelectorAll('.check-item').length;
+      const done = cat.querySelectorAll('.check-item.checked').length;
+      const el = document.getElementById('count-' + prefix + i);
+      if (el) el.textContent = done + ' / ' + total;
+    });
+  }
+
+  function resetPanel(panel) {
+    const p = document.getElementById('panel-' + panel);
+    p.querySelectorAll('.check-item.checked').forEach(el => el.classList.remove('checked'));
+    updateProgress(panel);
+  }
+
+  function switchTab(name, btn) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + name).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // Init counts on load
+  updateCounts('siswa');
+  updateCounts('guru');
+
+  // Init progress labels
+  ['siswa','guru'].forEach(p => {
+    const panel = document.getElementById('panel-' + p);
+    const all = panel.querySelectorAll('.check-item');
+    document.getElementById('pct-' + p).textContent = '0 / ' + all.length + ' selesai';
+  });
+</script>
+</body>
+</html>
