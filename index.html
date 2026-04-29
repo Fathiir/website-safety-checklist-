@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Safety Checklist — Sekolah</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0d1b2a;
+    --teal: #1a7a6e;
+    --teal-light: #21a090;
+    --gold: #e8b84b;
+    --cream: #f7f3ec;
+    --white: #ffffff;
+    --text: #1c2b3a;
+    --muted: #6b7e8f;
+    --border: rgba(26,122,110,0.15);
+    --shadow: 0 4px 32px rgba(13,27,42,0.10);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--navy);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.18);
+  }
+
+  .header-inner {
+    max-width: 960px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-icon {
+    width: 36px; height: 36px;
+    background: var(--teal);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  .logo-text {
+    font-family: 'DM Serif Display', serif;
+    color: var(--white);
+    font-size: 1.15rem;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+  }
+
+  .logo-sub { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: var(--teal-light); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+
+  .header-badge {
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 5px 13px;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 64px 32px 52px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(26,122,110,0.22) 0%, transparent 70%);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(26,122,110,0.25);
+    border: 1px solid rgba(26,122,110,0.5);
+    color: var(--teal-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    color: var(--white);
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.18;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .hero h1 em { color: var(--gold); font-style: italic; }
+
+  .hero p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+    position: relative;
+  }
+
+  /* ── TABS ── */
+  .tabs {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tab-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.6);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 11px 28px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tab-btn:first-child { border-radius: 10px 0 0 10px; }
+  .tab-btn:last-child  { border-radius: 0 10px 10px 0; border-left: none; }
+
+  .tab-btn.active {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: var(--white);
+  }
+
+  .tab-btn:hover:not(.active) {
+    background: rgba(255,255,255,0.14);
+    color: var(--white);
+  }
+
+  /* ── MAIN ── */
+  main { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  /* progress bar */
+  .progress-bar-wrap {
+    background: rgba(26,122,110,0.1);
+    border-radius: 99px;
+    height: 6px;
+    margin-bottom: 36px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--teal), var(--teal-light));
+    border-radius: 99px;
+    transition: width 0.4s cubic-bezier(.4,0,.2,1);
+    position: relative;
+  }
+
+  .progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 10px; height: 10px;
+    background: var(--teal-light);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(33,160,144,0.3);
+  }
+
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .progress-label span:last-child { color: var(--teal); font-weight: 600; }
+
+  /* category block */
+  .category {
+    margin-bottom: 32px;
+    animation: fadeUp 0.35s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(16px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .cat-icon {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .category-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--text);
+  }
+
+  .category-count {
+    margin-left: auto;
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 500;
+    background: rgba(26,122,110,0.08);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  /* checklist items */
+  .checklist { display: flex; flex-direction: column; gap: 8px; }
+
+  .check-item {
+    background: var(--white);
+    border: 1.5px solid transparent;
+    border-radius: 12px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 4px rgba(13,27,42,0.06);
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .check-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--border);
+    border-radius: 3px 0 0 3px;
+    transition: background 0.2s;
+  }
+
+  .check-item:hover {
+    border-color: var(--border);
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+  }
+
+  .check-item.checked {
+    background: #f0faf8;
+    border-color: rgba(26,122,110,0.3);
+  }
+
+  .check-item.checked::before { background: var(--teal); }
+
+  .checkbox {
+    width: 22px; height: 22px;
+    border: 2px solid #c8d5dd;
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.18s ease;
+    margin-top: 1px;
+    background: var(--white);
+  }
+
+  .check-item.checked .checkbox {
+    background: var(--teal);
+    border-color: var(--teal);
+  }
+
+  .checkbox svg { opacity: 0; transition: opacity 0.15s ease; }
+  .check-item.checked .checkbox svg { opacity: 1; }
+
+  .check-text { flex: 1; }
+  .check-title { font-size: 0.92rem; font-weight: 500; color: var(--text); line-height: 1.4; transition: color 0.2s; }
+  .check-item.checked .check-title { color: var(--teal); }
+  .check-desc { font-size: 0.78rem; color: var(--muted); margin-top: 3px; line-height: 1.5; }
+
+  .check-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .tag-penting { background: #fff3cd; color: #856404; }
+  .tag-wajib   { background: #fde0e0; color: #c0392b; }
+  .tag-baik    { background: #d4edda; color: #155724; }
+
+  /* panel separator */
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ── COMPLETION CARD ── */
+  .completion-card {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    color: var(--white);
+    margin-top: 8px;
+    margin-bottom: 32px;
+    box-shadow: 0 8px 32px rgba(26,122,110,0.25);
+    display: none;
+  }
+
+  .completion-card.show { display: block; animation: fadeUp 0.4s ease both; }
+
+  .completion-card .big-icon { font-size: 48px; margin-bottom: 12px; }
+  .completion-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.6rem; margin-bottom: 8px; }
+  .completion-card p { opacity: 0.75; font-size: 0.9rem; }
+
+  /* ── RESET ── */
+  .reset-btn {
+    background: transparent;
+    border: 1.5px solid var(--border);
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex; align-items: center; gap: 6px;
+    margin-left: auto;
+    margin-bottom: 24px;
+    transition: all 0.2s;
+  }
+  .reset-btn:hover { border-color: #c0392b; color: #c0392b; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 24px 24px 48px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    border-top: 1px solid var(--border);
+  }
+
+  footer strong { color: var(--teal); }
+
+  /* ── WATERMARK DIAGONAL ── */
+  .page-watermark {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+    overflow: hidden;
+  }
+
+  .page-watermark span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(48px, 9vw, 100px);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: rgba(26,122,110,0.055);
+    white-space: nowrap;
+    user-select: none;
+    text-transform: uppercase;
+  }
+
+  /* ── WATERMARK BADGE (bottom-right) ── */
+  .watermark-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: var(--navy);
+    border: 1.5px solid var(--teal);
+    border-radius: 12px;
+    padding: 8px 14px 8px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(13,27,42,0.22), 0 0 0 1px rgba(26,122,110,0.2);
+    cursor: default;
+    user-select: none;
+    animation: badgeIn 0.6s cubic-bezier(.34,1.56,.64,1) both 0.5s;
+  }
+
+  @keyframes badgeIn {
+    from { opacity:0; transform: translateY(16px) scale(0.9); }
+    to   { opacity:1; transform: translateY(0) scale(1); }
+  }
+
+  .watermark-badge:hover {
+    box-shadow: 0 6px 28px rgba(26,122,110,0.3), 0 0 0 1px var(--teal);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+  }
+
+  .wm-dot {
+    width: 28px; height: 28px;
+    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .wm-text { line-height: 1.2; }
+  .wm-made { font-size: 0.58rem; color: rgba(255,255,255,0.45); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; }
+  .wm-brand { font-family: 'DM Serif Display', serif; font-size: 0.82rem; color: var(--gold); letter-spacing: 0.04em; }
+
+  /* ── TIPS SECTION ── */
+  .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 16px; margin-top: 4px; }
+
+  .tip-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 22px;
+    border: 1.5px solid var(--border);
+    box-shadow: 0 2px 12px rgba(13,27,42,0.05);
+    animation: fadeUp 0.35s ease both;
+  }
+
+  .tip-icon { font-size: 28px; margin-bottom: 10px; }
+  .tip-card h4 { font-family: 'DM Serif Display', serif; font-size: 1rem; margin-bottom: 6px; color: var(--text); }
+  .tip-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+  @media (max-width: 600px) {
+    .header-inner { padding: 14px 20px; }
+    main { padding: 28px 16px 60px; }
+    .hero { padding: 48px 20px 40px; }
+    .tab-btn { padding: 10px 18px; font-size: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">🛡️</div>
+      <div>
+        <div class="logo-text">Digital Safety</div>
+        <div class="logo-sub">Checklist Sekolah</div>
+      </div>
+    </div>
+    <div class="header-badge">2026 Edition</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">📋 Panduan Keamanan Digital</div>
+  <h1>Aman di Dunia <em>Digital</em>,<br>Cerdas di Setiap Langkah</h1>
+  <p>Checklist interaktif untuk siswa dan guru agar tetap aman, bijak, dan terlindungi saat beraktivitas online.</p>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('siswa', this)">👨‍🎓 Untuk Siswa</button>
+    <button class="tab-btn" onclick="switchTab('guru', this)">👩‍🏫 Untuk Guru</button>
+    <button class="tab-btn" onclick="switchTab('tips', this)">💡 Tips & Panduan</button>
+  </div>
+</div>
+
+<main>
+
+  <!-- ═══════════ SISWA PANEL ═══════════ -->
+  <div class="panel active" id="panel-siswa">
+
+    <div class="completion-card" id="done-siswa">
+      <div class="big-icon">🎉</div>
+      <h3>Luar Biasa! Kamu Sudah Aman!</h3>
+      <p>Semua item checklist sudah dicentang. Kamu adalah pengguna internet yang bertanggung jawab!</p>
+    </div>
+
+    <div class="progress-label">
+      <span>Progress Keamananmu</span>
+      <span id="pct-siswa">0 / 0 selesai</span>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="bar-siswa" style="width:0%"></div>
+    </div>
+
+    <button class="reset-btn" onclick="resetPanel('siswa')">↺ Reset Checklist</button>
+
+    <!-- 1. Password & Akun -->
+    <div class="category" style="animation-delay:0.05s">
+      <div class="category-header">
+        <div class="cat-icon" style="background:#e8f4fd">🔑</div>
+        <div class="category-title">Password & Keamanan Akun</div>
+        <div class="category-count" id="count-s1"></div>
+      </div>
+      <div class="checklist" id="cat-s1">
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Gunakan password yang kuat (min. 8 karakter, huruf besar+kecil, angka, simbol)</div>
+            <div class="check-desc">Contoh: P@ssw0rd!Aman — hindari tanggal lahir atau nama sendiri</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Tidak berbagi password kepada siapapun, termasuk teman</div>
+            <div class="check-desc">Password adalah rahasia pribadi, jaga selalu</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Aktifkan verifikasi dua langkah (2FA) pada akun penting</div>
+            <div class="check-desc">Google, email sekolah, dan media sosial wajib menggunakan 2FA</div>
+          </div>
+          <span class="check-tag tag-penting">Penting</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Logout dari akun setelah menggunakan komputer bersama</div>
+            <div class="check-desc">Jangan tinggalkan akun aktif di perangkat umum atau lab komputer</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Media Sosial -->
+    <div class="category" style="animation-delay:0.10s">
+      <div class="category-header">
+        <div class="cat-icon" style="background:#fef3e8">📱</div>
+        <div class="category-title">Media Sosial & Privasi</div>
+        <div class="category-count" id="count-s2"></div>
+      </div>
+      <div class="checklist" id="cat-s2">
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Atur privasi akun media sosial menjadi "Teman" atau "Pribadi"</div>
+            <div class="check-desc">Tidak semua orang perlu melihat postinganmu</div>
+          </div>
+          <span class="check-tag tag-penting">Penting</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Tidak memposting informasi pribadi: alamat rumah, nomor HP, jadwal harian</div>
+            <div class="check-desc">Data pribadimu dapat disalahgunakan oleh orang yang tidak bertanggung jawab</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Tidak menerima permintaan pertemanan dari orang yang tidak dikenal</div>
+            <div class="check-desc">Stranger danger berlaku di dunia nyata maupun dunia maya</div>
+          </div>
+          <span class="check-tag tag-wajib">Wajib</span>
+        </div>
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width="12" height="9" viewBox="0 0 12 9" fill="none"><path d="M1 4L4.5 7.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="check-text">
+            <div class="check-title">Berpikir sebelum memposting — sekali diunggah, sulit dihapus</div>
+            <div class="check-desc">Tanyakan diri sendiri: "Apakah saya nyaman jika guru/orang tua melihat ini?"</div>
+          </div>
+          <span class="check-tag tag-penting">Penting</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Cyberbullying -->
+    <div class="category" style="animation-delay:0.15s">
+      <div class="category-header">(
+        <div class="cat-icon" style="background:#fde8f0">🤝</div>
+        <div class="category-title">Anti Cyberbullying</div>
+        <div class="category-count" id="count-s3"></div>
+      </div>
+      <div class="checklist" id="cat-s3">
+        <div class="check-item" onclick="toggle(this,'siswa')">
+          <div class="checkbox"><svg width
